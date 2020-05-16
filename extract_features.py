@@ -24,4 +24,4 @@ def matriz_features():
         class_list.append(feature_matrix)
 
     matriz_final = np.concatenate(class_list, axis=0)
-    retur(matriz_final)
+    return(matriz_final)
