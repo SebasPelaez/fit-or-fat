@@ -13,9 +13,9 @@ def verify_folder(folder):
 def extract_features(image):
   textures = mt.features.haralick(image)
   ht_mean = textures.mean(axis=0)
-  #ht_std = textures.std(axis=0)
-  #ht = np.concatenate((ht_mean,ht_std))
-  return ht_mean
+  ht_std = textures.std(axis=0)
+  ht = np.concatenate((ht_mean,ht_std))
+  return ht
 
 def download_data(params):
 

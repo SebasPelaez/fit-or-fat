@@ -1,10 +1,10 @@
 import numpy as np
 import os
 
-def matriz_features():
+def matriz_features(data_path):
     features_dict = dict()
 
-    for base, dis, files in os.walk('dataset/features'):
+    for base, dis, files in os.walk(os.path.join('dataset',data_path)):
         for file in files:
 
             file_dir_split = base.split(os.sep)
