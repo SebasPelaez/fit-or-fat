@@ -13,9 +13,9 @@ def verify_folder(folder):
 def extract_features(image):
   textures = mt.features.haralick(image)
   ht_mean = textures.mean(axis=0)
-  ht_std = textures.std(axis=0)
-  ht = np.concatenate((ht_mean,ht_std))
-  return ht
+  #ht_std = textures.std(axis=0)
+  #ht = np.concatenate((ht_mean,ht_std))
+  return ht_mean
 
 def download_data(params):
 
@@ -53,7 +53,8 @@ def generate_textural_features(params):
 
   data_path = os.path.join(params['data_dir'],params['data_dir_images'])
   feature_dict = dict()
-  print(data_path)
+
+  i = 0
   for root, dirs, files in os.walk(data_path, topdown=False):
 
     for name in files:
@@ -74,16 +75,17 @@ def generate_textural_features(params):
       gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
       # extract haralick texture from the image
+      print(i,':',name)
       textures = extract_features(gray)
       
       feature_dict[meta_class][sub_class].append(textures)
+      i += 1
 
   save_features(params,feature_dict)
 
 if __name__ == '__main__':
 
   params = utils.yaml_to_dict('config.yml')
-  download_data(params)
-  extract_data(params)
+  #download_data(params)
+  #extract_data(params)
   generate_textural_features(params)
-       
