@@ -86,6 +86,6 @@ def generate_textural_features(params):
 if __name__ == '__main__':
 
   params = utils.yaml_to_dict('config.yml')
-  #download_data(params)
-  #extract_data(params)
+  download_data(params)
+  extract_data(params)
   generate_textural_features(params)
