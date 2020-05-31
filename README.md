@@ -4,7 +4,7 @@ En este repositorio esta alojado el juego **FIT-OR-FAT** un proyecto que se creo
 
 El proyecto consiste en la construcción de un clasificador multiclase que permitirá determinar si una imagen con un alimento pertenece a 1 de los 3 tipos, entre los cuales se encuentra **FIT, FAT, HALF**. Dicho clasficiador se entrena con un conjunto de datos de aproximadamenter 60 mil imagenes. Es importante mencionar que a cada una delas imagenes se les extrae el vector caracteristico de Halarick con el cual será posible entrenar y realizar inferencias sobre el modelo.
 
-![Pantalla del Juego](Imagenes/Predicciones.png).
+![Pantalla del Juego](Imagenes/Predicciones.PNG).
 
 ## Project Structure
 
